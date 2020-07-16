@@ -1,15 +1,17 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
+import Layout from "../components/Layout/Layout";
 
-const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-    </p>
-  </Layout>
-)
+const IndexPage = ({ productList }) => {
+  return <Layout productList={productList} />;
+};
 
-export default IndexPage
+export async function getStaticProps() {
+  const res = await fetch("https://min-shop.herokuapp.com/rest/product");
+  const data = await res.json();
+  const productList = data.data;
+  return {
+    props: {
+      productList,
+    },
+  };
+}
+export default IndexPage;
