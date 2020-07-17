@@ -5,12 +5,18 @@ import Content from "./Content/Content";
 import ADS from "./ads/ads";
 import Footer from "./Footer/Footer";
 import Menu from "./Menu/Menu";
-const Layout = ({ productList }) => {
+import { ProductGeneral } from "../../interfaces";
+
+type Props = {
+  productList: [ProductGeneral];
+};
+
+const Layout: React.FC<Props> = ({ productList }) => {
   return (
     <Grid
       gap="40px"
-      columns={"100px 1fr 100px"}
-      rows={"45px 1fr 45px"}
+      columns={"100px 1fr 50px"}
+      rows={"50px 1fr 50px"}
       areas={[
         "header header  header",
         "menu   content ads   ",

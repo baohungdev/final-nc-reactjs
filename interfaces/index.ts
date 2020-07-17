@@ -5,6 +5,24 @@
 // import User from 'path/to/interfaces';
 
 export type User = {
-  id: number
-  name: string
-}
+  id: number;
+  name: string;
+};
+
+export type ProductGeneral = {
+  name: string;
+  productId: number;
+  imgUrlMob: string;
+  imgUrl: string;
+  price: number;
+  promotionPercent: number;
+  finalPrice: number;
+  shopId: number;
+  shopName: string;
+  percentStar: number;
+  categoryId: string;
+};
+
+export type ProductList = {
+  productList: [ProductGeneral];
+};

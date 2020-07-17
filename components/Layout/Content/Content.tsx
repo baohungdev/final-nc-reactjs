@@ -1,11 +1,17 @@
 import React from "react";
 import { Grid, Cell } from "styled-css-grid";
 import Card from "./Card/Card";
-const Content = ({ productList }) => {
+import { ProductGeneral } from "../../../interfaces";
+
+type Props = {
+  productList: [ProductGeneral];
+};
+
+const Content: React.FC<Props> = ({ productList }) => {
   return (
-    <Grid columns="repeat(auto-fit,minmax(500px,1fr))">
-      {productList.map((product) => (
-        <Cell>
+    <Grid gap="50px" columns="repeat(auto-fit,minmax(350px,1fr))">
+      {productList.map((product: ProductGeneral) => (
+        <Cell key={product.productId}>
           <Card product={product} />
         </Cell>
       ))}

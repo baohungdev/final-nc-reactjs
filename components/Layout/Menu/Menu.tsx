@@ -1,7 +1,7 @@
 import React from "react";
 
 const Menu: React.FC = () => {
-  return <h1>Menu</h1>;
+  return <h3>Menu</h3>;
 };
 
 export default Menu;

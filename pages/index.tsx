@@ -1,6 +1,9 @@
 import Layout from "../components/Layout/Layout";
-
-const IndexPage = ({ productList }) => {
+import { ProductGeneral } from "../interfaces";
+type Props = {
+  productList: [ProductGeneral];
+};
+const IndexPage: React.FC<Props> = ({ productList }) => {
   return <Layout productList={productList} />;
 };
 
